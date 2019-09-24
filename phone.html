@@ -1,0 +1,549 @@
+﻿<!DOCTYPE html>
+<html>
+<head><title>
+	Off-Campus
+</title>
+    <link href="../Inc/css/careers.css" rel="stylesheet"
+        type="text/css" />
+    <link href="../Inc/css/all.min.css" rel="stylesheet"
+        type="text/css" />
+    <link href="../Inc/css/jquery-ui.css" rel="stylesheet"
+        type="text/css" />
+
+
+    <style type="text/css">
+        .modal-backdropAjax-MasterPage {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 999999;
+            background-color: rgba(0, 0, 0, .05);
+        }
+
+        .Loading-MasterPage {
+
+            height: 70px;
+            width: 110px;
+            position: fixed;
+            z-index: 9999999;
+            left: 50%;
+            top: 50%;
+            margin: -25px 0 0 -25px;
+            opacity: .5;
+            filter: alpha(opacity=50);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background-image">
+        <!-- Blank space for Image wrap IE -->
+        &nbsp;
+    </div>
+
+    <div class="header-outer" id="Top">
+        <div class="container">
+            <div class="row">
+                <section class="col-md-12">
+                    <header>
+                        <div class="brand-wrap">
+                            <a href="#" class="navbar-brand"></a>
+                        </div>
+                        <div class="nav-global-wrap">
+                            <ul class="nav-global">
+                                <li></li>
+                            </ul>
+
+                        </div>
+                    </header>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <form method="post" action="./OffCampus.aspx" id="form1" class="career-form">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE">
+</div>
+ <div>
+        </div>
+
+        
+        <div class="outer-wrapper-container no-leadStory">
+            <div class="content-wrapper">
+                <div class="container content-page-section aboutCont">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <div class="content">
+                                <div class="col-md-12 alpha omega">
+                                    <div class="content-inner">
+                                        <div class="form-wrap">
+                                            
+                                            
+                                                    <span id="lblResult" class="text-center" style="color: green"></span>
+                                                
+                                            <h4>
+
+                                                <i class="icon-file"></i>Candidate's Detail
+                                            </h4>
+
+                                            <ul class="form">
+                                                
+                                                <li>
+                                                    <label id="lblEFName" for="FullName" class="placeholder-alt">
+                                                        Full Name <span class="mandatory">*</span>
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <input name="txtFName" type="text" maxlength="50" id="txtFName" class="text" name="txtFName" autocomplete="off" placeholder="Full Name" onkeypress="KeyPressed(this)" />
+
+                                                    </div>
+                                                    <span id="lblFullName" style="color: red"></span>
+                                                </li>
+                                                <li id="MobileNumber">
+                                                    <label for="MobileNumber" class="placeholder-alt">
+                                                        Mobile Number <span class="mandatory">*</span>
+                                                    </label>
+                                                    <div class="text-input country-code-extension">
+                                                        <input name="txtCountryCode" type="text" maxlength="5" id="txtCountryCode" class="text countryCode" autocomplete="off" value="+91" placeholder="Country Code" />
+                                                        
+                                                        <input name="txtMobileNumber" type="text" maxlength="10" id="txtMobileNumber" class="text phoneNumber" autocomplete="off" placeholder="Mobile Number" onkeypress="KeyPressed(this)" />
+                                                    </div>
+                                                    
+                                                    <span id="lblMobileNumber" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label id="lblMailId" for="PrimaryMailId" class="placeholder-alt">
+                                                        Primary Mail ID <span class="mandatory">*</span>
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <input name="txtMailID" type="text" maxlength="40" id="txtMailID" class="text" autocomplete="off" placeholder="Primary Mail ID" onkeypress="KeyPressed(this)" />
+                                                    </div>
+                                                    <span id="lblPrimaryMailId" style="color: red"></span>
+                                                </li>
+                                                <li id="DateOfBirth">
+                                                    <label for="DateOfBirth" class="placeholder-alt">
+                                                        Date Of Birth <span class="mandatory">*</span>
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <input name="txtDateOfBirth" maxlength="40" id="txtDateOfBirth" class="text career-datepicker" type="text" autocomplete="off" placeholder="The format is dd Month, yyyy (Ex. 1 January, 2018)" onkeypress="KeyPressed(this)" readonly="readonly" />
+                                                    </div>
+                                                    <span id="lblDateOfBirth" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="XStd" class="">
+                                                        X Std. % or CGPA<span class="mandatory">*</span>
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <input name="txtXStd" type="text" maxlength="40" id="txtXStd" class="text career-datepicker" autocomplete="off" placeholder="X Std. % or CGPA" onkeypress="KeyPressed(this)" />
+                                                    </div>
+                                                    <span id="lblXStd" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="XIIStd" class="placeholder-alt">
+                                                        XII Std. % or CGPA 
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <input name="txtXIIStd" type="text" maxlength="40" id="txtXIIStd" class="text career-datepicker" autocomplete="off" placeholder="XII Std. % or CGPA" onkeypress="KeyPressed(this)" />
+                                                    </div>
+                                                    <span id="lblXIIStd" style="color: red"></span>
+                                                </li>
+
+                                            </ul>
+                                            <hr class="alt" />
+                                            <h4>
+                                                <i class="icon-file"></i>Diploma
+                                            </h4>
+                                            <ul class="form">
+
+                                                <li>
+                                                    <label for="DipCGPA" class="placeholder-alt">
+                                                        % or CGPA
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <input name="txtDipCGPA" type="text" maxlength="40" id="txtDipCGPA" class="text career-datepicker" autocomplete="off" placeholder="% or CGPA" onkeypress="KeyPressed(this)" />
+                                                    </div>
+                                                    <span id="lblDipCGPA" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="DipGradState" class="placeholder-alt">
+  Graduating State
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <select name="ddDipGradState" id="ddDipGradState" class="sel styled" autocomplete="off" placeholder="Graduating State" onchange="DrpSelect(this)">
+	<option value="Please Select">Please Select</option>
+	<option value="Andaman and Nico.In.">Andaman and Nico.In.</option>
+	<option value="Andhra Pradesh">Andhra Pradesh</option>
+	<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+	<option value="Assam">Assam</option>
+	<option value="Bihar">Bihar</option>
+	
+</select>
+                                                    </div>
+                                                    <span id="lblDipGradState" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="OtherDipState" class="placeholder-alt">
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <input name="txtDipOtherState" type="text" maxlength="100" id="txtDipOtherState" class="text career-datepicker" autocomplete="off" placeholder="Enter the State name" onkeypress="KeyPressed(this)" style="display: none;" />
+                                                    </div>
+                                                    <span id="lblDipOtherState" style="color: red"></span>
+                                                </li>
+                                            </ul>
+                                            <hr class="alt" />
+                                            <h4>
+
+                                                <i class="icon-file"></i>Graduation
+                                            </h4>
+                                            <ul class="form">
+                                                <li id="liIntLoc">
+                                                    <label for="GradDegree" class="">
+                                                        Degree( B.Tech / B.E etc. ) <span class="mandatory">*</span>
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <select name="ddGradDegree" id="ddGradDegree" class="sel styled" autocomplete="off" placeholder="Degree" onchange="DrpSelect(this)">
+	<option value="Please Select">Please Select</option>
+	<option value="Bachelor of Arts">Bachelor of Arts</option>
+	<option value="Bachelor of Arts (Honor)">Bachelor of Arts (Honor)</option>
+	<option value="Bachelor of Business Adm.">Bachelor of Business Adm.</option>
+	<option value="Bachelor of Business Mgmt.">Bachelor of Business Mgmt.</option>
+</select>
+                                                        
+
+                                                    </div>
+                                                    <span id="lblGradDegree" style="color: red"></span>
+                                                </li>
+
+                                                <li>
+                                                    <label for="NameOfCollege" class="">
+                                                        Name of the College<span class="mandatory">*</span></label>
+                                                    <div class="text-input">
+
+                                                        <select name="ddGradNameOfCollege" id="ddGradNameOfCollege" class="sel styled" name="skills" autocomplete="off" placeholder="Name of the College" onchange="DrpSelect(this)">
+	<option value="Please Select">Please Select</option>
+	<option value="A C Patil College Of Engineering">A C Patil College Of Engineering</option>
+	<option value="A C Technology Chennai">A C Technology Chennai</option>
+	<option value="A D Patel Institute of Technology">A D Patel Institute of Technology</option>
+	<option value="A M C Engineering College">A M C Engineering College</option>
+	<option value="A V C College of Engineering Nagapattinam">A V C College of Engineering Nagapattinam</option>
+</select>
+                                                        &nbsp
+                                                                                
+                                                                                
+                                                        <br />
+                                                        
+
+                                                        
+                                                    </div>
+
+                                                    <span id="lblNameOfCollege" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="OtherGradCollege" class="placeholder-alt">
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <input name="txtGradNOCOthers" type="text" maxlength="100" id="txtGradNOCOthers" class="text career-datepicker" autocomplete="off" placeholder="Enter your College Name" onkeypress="KeyPressed(this)" style="display: none;" />
+                                                    </div>
+                                                    <span id="lblNOCOthers" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="GradState" class="placeholder-alt">
+                                                        Graduating State <span class="mandatory">*</span>
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <select name="ddGradState" id="ddGradState" class="sel styled" autocomplete="off" placeholder="Graduating State" onchange="DrpSelect(this)">
+	<option value="Please Select">Please Select</option>
+	<option value="Andaman and Nico.In.">Andaman and Nico.In.</option>
+	<option value="Andhra Pradesh">Andhra Pradesh</option>
+	<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+	<option value="Assam">Assam</option>
+</select>
+                                                    </div>
+                                                    <span id="lblGradState" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="OtherGradState" class="placeholder-alt">
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <input name="txtGradOtherState" type="text" maxlength="100" id="txtGradOtherState" class="text career-datepicker" autocomplete="off" placeholder="Enter the State name" onkeypress="KeyPressed(this)" style="display: none;" />
+                                                    </div>
+                                                    <span id="lblGradOtherState" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="Specialization" class="placeholder-alt">
+                                                        Specialization / Branch <span class="mandatory">*</span>
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <select name="ddGradSpec" id="ddGradSpec" class="sel styled" autocomplete="off" placeholder="Specialization / Branch" onchange="DrpSelect(this)">
+	<option value="Please Select">Please Select</option>
+	<option value=" Advanced Communication"> Advanced Communication</option>
+	<option value="Accountancy">Accountancy</option>
+	<option value="Accounting">Accounting</option>
+	<option value="Accounts &amp; Finance">Accounts &amp; Finance</option>
+</select>
+                                                    </div>
+                                                    <span id="lblBranch" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="GradCGPA" class="placeholder-alt">
+                                                        % or CGPA <span class="mandatory">*</span>
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <input name="txtGradCGPA" type="text" id="txtGradCGPA" class="text career-datepicker" autocomplete="off" placeholder="% or CGPA" onkeypress="KeyPressed(this)" />
+                                                    </div>
+                                                    <span id="lblGradCGPA" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="YearOfCompletion" class="placeholder-alt">
+                                                        Year Of Completion <span class="mandatory">*</span>
+                                                    </label>
+                                                    <div class="text-input">
+<select name="ddGradYOC" id="ddGradYOC" class="sel styled" autocomplete="off" placeholder="Year Of Completion" onchange="DrpSelect(this)">
+	<option value="Please Select">Please Select</option>
+	<option value="2019">2019</option>
+	<option value="2018">2018</option>
+	<option value="2017">2017</option>
+	<option value="2016">2016</option>
+	<option value="2015">2015</option>
+	<option value="2014">2014</option>
+
+</select>
+                                                    </div>
+                                                    <span id="lblYearOfCompletion" style="color: red"></span>
+                                                </li>
+                                            </ul>
+                                            <hr class="alt" />
+                                            <h4>
+                                                <i class="icon-file"></i>Post-Graduation
+                                            </h4>
+                                            <ul class="form">
+                                                <li id="lsiIntLoc">
+                                                    <label for="PGDegree" class="">
+                                                        PG Degree( M.Tech / M.E etc. ) 
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <select name="ddPGDegree" id="ddPGDegree" class="sel styled" autocomplete="off" placeholder="PG Degree" onchange="DrpSelect(this)">
+	<option value="Please Select">Please Select</option>
+	<option value="Master of Comp. Applications">Master of Comp. Applications</option>
+	<option value="Master of Engineering">Master of Engineering</option>
+	<option value="Master of Science">Master of Science</option>
+</select>
+                                                        
+
+                                                    </div>
+                                                    <span id="lblPGDegree" style="color: red"></span>
+                                                </li>
+
+                                                <li>
+                                                    <label for="lblPGNameOfCollege" class="">
+                                                        Name of the College
+                                                    </label>
+                                                    <div class="text-input">
+
+                                                        <select name="ddPGNOC" id="ddPGNOC" class="sel styled" name="skills" autocomplete="off" placeholder="Name of the College" onchange="DrpSelect(this)">
+	<option value="Please Select">Please Select</option>
+	<option value="A C Patil College Of Engineering">A C Patil College Of Engineering</option>
+	<option value="A C Technology Chennai">A C Technology Chennai</option>
+	<option value="A D Patel Institute of Technology">A D Patel Institute of Technology</option>
+	<option value="A M C Engineering College">A M C Engineering College</option>
+	<option value="A V C College of Engineering Nagapattinam">A V C College of Engineering Nagapattinam</option>
+	<option value="A W H Engineering College">A W H Engineering College</option>
+</select>
+                                                        &nbsp
+                                                             
+                                                    </div>
+
+                                                    <span id="lblPGNOC" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="OtherPGGradCollege" class="placeholder-alt">
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <input name="txtPGNOCOther" type="text" maxlength="100" id="txtPGNOCOther" class="text career-datepicker" autocomplete="off" placeholder="Enter your College Name " onkeypress="KeyPressed(this)" style="display: none;" />
+                                                    </div>
+                                                    <span id="lblPGNOCOthers" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="lblPGState" class="placeholder-alt">
+                                                        Graduating State
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <select name="ddPGState" id="ddPGState" class="sel styled" autocomplete="off" placeholder="Graduating State" onchange="DrpSelect(this)">
+	<option value="Please Select">Please Select</option>
+	<option value="Andaman and Nico.In.">Andaman and Nico.In.</option>
+	<option value="Andhra Pradesh">Andhra Pradesh</option>
+	<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+	<option value="Assam">Assam</option>
+	<option value="Bihar">Bihar</option>
+</select>
+                                                    </div>
+                                                    <span id="lblPGSt" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="OtherPGradState" class="placeholder-alt">
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <input name="txtPGOtherState" type="text" maxlength="100" id="txtPGOtherState" class="text career-datepicker" autocomplete="off" placeholder="Enter the State name" onkeypress="KeyPressed(this)" style="display: none;" />
+                                                    </div>
+                                                    <span id="lblPGOtherState" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="lblPGSpecialization" class="placeholder-alt">
+                                                        Specialization / Branch
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <select name="ddPGSpec" id="ddPGSpec" class="sel styled" autocomplete="off" placeholder="Specialization / Branch" onchange="DrpSelect(this)">
+	<option value="Please Select">Please Select</option>
+	<option value=" Advanced Communication"> Advanced Communication</option>
+	<option value="Accountancy">Accountancy</option>
+	<option value="Accounting">Accounting</option>
+	<option value="Accounts &amp; Finance">Accounts &amp; Finance</option>
+	<option value="Accounts &amp; Statistics">Accounts &amp; Statistics</option>
+</select>
+                                                    </div>
+                                                    <span id="lblPGSpec" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="PGradCGPA" class="placeholder-alt">
+                                                        % or CGPA
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <input name="txtPGradCGPA" type="text" id="txtPGradCGPA" class="text career-datepicker" autocomplete="off" placeholder="% or CGPA" onkeypress="KeyPressed(this)" />
+                                                    </div>
+                                                    <span id="lblPGradCGPA" style="color: red"></span>
+                                                </li>
+                                                <li>
+                                                    <label for="PGYearOfCompletion" class="placeholder-alt">
+                                                        Year of Completion
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <select name="ddPGYOC" id="ddPGYOC" class="sel styled" autocomplete="off" placeholder="Year of Completion" onchange="DrpSelect(this)">
+	<option value="Please Select">Please Select</option>
+	<option value="2019">2019</option>
+	<option value="2018">2018</option>
+	<option value="2017">2017</option>
+
+</select>
+                                                    </div>
+                                                    <span id="lblPGYOC" style="color: red"></span>
+                                                </li>
+                                            </ul>
+                                            <hr class="alt" />
+                                            <ul class="form">
+                                                <li>
+                                                    <label for="lblPreferredTestLocation" class="placeholder-alt">
+                                                        Preferrred Test Location <span class="mandatory">*</span>
+                                                    </label>
+                                                    <div class="text-input">
+                                                        <select name="ddPLocation" id="ddPLocation" class="sel styled" autocomplete="off" placeholder="Preferred Test Location" onchange="DrpSelect(this)">
+	<option value="Please Select">Please Select</option>
+	<option value="BANGALORE">BANGALORE</option>
+	<option value="CHENNAI">CHENNAI</option>
+	<option value="DELHI">DELHI</option>
+	<option value="HYDERABAD">HYDERABAD</option>
+	<option value="KOLKATA">KOLKATA</option>
+	<option value="PUNE">PUNE</option>
+
+</select>
+                                                    </div>
+                                                    <span id="lblPrefTestLoc" style="color: red"></span>
+                                                </li>
+
+                                            </ul>
+                                            
+                                                    <hr class="alt" />
+                                                    <ul class="form">
+                                                        <li id="liCaptcha">
+                                                            <div class="text-input">
+                                                                Enter the code shown below:<span class="mandatory">*</span>
+                                                                <input name="txtCaptcha" maxlength="5" id="txtCaptcha" name="txtCaptcha" type="text" class="text" autocomplete="off" onkeypress="KeyPressed(this)" />
+                                                            </div>
+                                                            <br />
+                                                            <div>
+                                                                <img src="/CareerSite/Aspx/GenerateRegistrationCheck.aspx" id="imgCheck" class="registrationCheck" style="height: 35px;" />
+                                                            </div>
+                                                            <span id="lblCaptcha" style="color: red"></span>
+                                                        </li>
+                                                    </ul>
+
+                                                    <a id="btnSubmit" class="btn large" type="submit" href="javascript:__doPostBack(&#39;btnSubmit&#39;,&#39;&#39;)">Submit</a>
+                                                    &nbsp;
+                <a id="lnkReset" class="btn large" type="reset" href="javascript:__doPostBack(&#39;lnkReset&#39;,&#39;&#39;)">Reset</a>
+                                                    <br />
+                                                    <span id="lblResultMessage"></span>
+                                                    <p>
+                                                        &nbsp;
+                                                    </p>
+                                                 </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div id="UpdateProgress_Master" style="display:none;">
+	
+                <div id="dvBackgroundProgressBar" class="Loading-MasterPage">
+                </div>
+                <div id="Div2" class="modal-backdropAjax-MasterPage fade in">
+                </div>
+            
+</div>
+</form>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="nav-footer no-bdr-top">
+                        <ul class="social-profile">
+                            <li></li>
+                        </ul>
+                    </div>
+
+                    <div class="nav-footer-wrap">
+                        <div class="nav-footer mobile-only">
+                            <ul class="h-list">
+                                <li></li>
+                            </ul>
+                        </div>
+                        <div class="nav-footer mobile-only">
+                            <ul class="h-list">
+                                <li></li>
+                                <li><a href="/careers/" title="Careers"><i class="icon-circle"></i>Careers</a> </li>
+                            </ul>
+                        </div>
+                        <div class="nav-footer mobile-only">
+                            <ul class="h-list">
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="nav-footer no-bdr-btm">
+                        <ul class="h-list desktop-only">
+                            <li></li>
+                        </ul>
+                       
+                           
+                    </div>
+                    <div class="nav-footer no-bdr-btm">
+                        <ul class="h-list desktop-only">
+                            <li></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
